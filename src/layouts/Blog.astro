@@ -1,0 +1,69 @@
+---
+import { /*Image,*/ Picture } from 'astro:assets';
+import { fade } from 'astro:transitions';
+import type { CollectionEntry } from 'astro:content';
+import { FormattedDate, Title } from '@daks.dev/astro.sdk/astro';
+import twMerge from '$lib/tailwind';
+import Layout from './Base.astro';
+
+export const components = { h1: Title };
+
+type Props = CollectionEntry<'blog'>['data'] & { class?: ClassName };
+
+const { title, description, pubDate, updatedDate, heroImage, class: className } = Astro.props;
+
+/*
+<Image
+  src={heroImage}
+  width={1020}
+  height={510}
+  alt=''
+/>
+*/
+---
+
+<Layout
+  {title}
+  {description}>
+  <article
+    class={twMerge('content grow', className)}
+    role='main'
+    itemprop='mainContentOfPage'
+    transition:animate={fade({ duration: '0.3s' })}>
+    <header>
+      {
+        heroImage && (
+          <Picture
+            class='mb-4 h-auto w-full max-w-full rounded-xl'
+            src={heroImage}
+            formats={['avif', 'webp']}
+            widths={[480, 960]}
+            alt=''
+          />
+        )
+      }
+      <div class='mb-4 flex justify-between'>
+        <FormattedDate
+          class='font-mono text-base'
+          date={pubDate}
+          itemprop='datePublished'
+        />
+        {
+          updatedDate && (
+            <span>
+              Last updated on
+              <FormattedDate
+                class='font-mono text-base tracking-normal'
+                date={updatedDate}
+                itemprop='dateModified'
+              />
+            </span>
+          )
+        }
+      </div>
+      <Title>{title}</Title>
+    </header>
+
+    <slot />
+  </article>
+</Layout>

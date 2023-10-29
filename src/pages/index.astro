@@ -1,0 +1,102 @@
+---
+import { getCollection } from 'astro:content';
+import { Title } from '@daks.dev/astro.sdk/astro/title';
+import { ContentCarousel, ContentLightbox } from '@daks.dev/astro.sdk/astro/content';
+import Layout from '@/layouts/Page.astro';
+
+// import { Icon } from '$lib/astro';
+import { Icon } from '@daks.dev/astro.sdk/astro/icon';
+
+const gallery = await getCollection('gallery');
+
+const title = 'Welcome to Astro';
+const description = 'Welcome to Astro';
+---
+
+<Layout
+  class='mb-8 flex flex-col'
+  {title}
+  {description}>
+  <Title class='mb-12 text-center text-7xl'>
+    Welcome to <span class='text-slate-400'>Astro</span>
+  </Title>
+
+  <dev class='mb-8 flex flex-wrap justify-center gap-x-4'>
+    <Icon
+      icon='terminal-window'
+      class='h-48 w-auto from-red-500 to-blue-500'
+      gradient='90'
+    />
+    <Icon
+      class='h-48 w-auto from-blue-500 to-red-500'
+      icon='code-block'
+      gradient='45'
+    />
+    <Icon
+      class='h-48 w-auto from-blue-500 to-red-500'
+      icon='package'
+      gradient='90'
+    />
+    <Icon
+      class='h-48 w-auto from-red-500 to-blue-500'
+      icon='globe'
+      gradient
+    />
+    <Icon
+      icon='trophy'
+      class='h-48 w-48 from-blue-500 to-red-500'
+      gradient
+    />
+  </dev>
+
+  <section class='bg-loading bg-10% mb-16 bg-clip-content bg-center bg-no-repeat'>
+    <h2 class='mb-8 mt-0 text-center text-lg lg:text-xl'>Svelte Carousel & Astro Content :</h2>
+    <ContentCarousel
+      class='h-48 md:h-64 lg:h-48'
+      custom={{
+        inner: { caption: 'absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-sm' }
+      }}
+      appear={300}
+      native
+      stream
+      data={gallery}
+      transform={{
+        width: 288,
+        quality: 80
+      }}
+      filter={['title']}
+    />
+  </section>
+
+  <section class='flex flex-col gap-y-8'>
+    <h2 class='m-0 text-center text-lg sm:text-xl lg:text-2xl'>
+      Svelte Lightbox & Astro Content :
+    </h2>
+    {
+      gallery.map((data) => (
+        <ContentLightbox
+          class='flex w-full flex-wrap justify-center gap-8'
+          custom={{
+            inner: {
+              image: 'w-48',
+              caption: 'mt-2 text-sm',
+              title: 'text-slate-700 dark:text-slate-400'
+            }
+          }}
+          options={{ behaviour: 'loop' }}
+          {data}
+          transform={{
+            thumb: {
+              width: 288,
+              quality: 80
+            },
+            modal: {
+              width: 800,
+              quality: 80
+            }
+          }}
+        />
+      ))
+    }
+  </section>
+</Layout>

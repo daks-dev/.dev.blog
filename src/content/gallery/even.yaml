@@ -1,0 +1,16 @@
+- image: 0.jpg
+  caption:
+    title: title yaml 0
+    subtitle: subtitle yaml 0
+    description: description yaml 0
+- image: 2.jpg
+  caption:
+    title: title yaml 2
+    description: description yaml 2
+- image: 4.jpg
+  caption:
+    title: title yaml 4
+    subtitle: subtitle yaml 4
+- image: 6.jpg
+  caption:
+    title: title yaml 6

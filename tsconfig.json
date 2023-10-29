@@ -1,0 +1,33 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "strictNullChecks": true,
+    "checkJs": true,
+    "sourceMap": true,
+    "lib": ["esnext", "DOM", "DOM.Iterable"],
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ],
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "$lib/*": ["src/lib/*"],
+      "$app/*": ["src/lib/app/*"]
+    }
+  },
+  "include": [
+    "astro.config.mjs",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.astro",
+    "src/**/*.svelte"
+  ],
+  "exclude": ["node_modules/**"]
+}

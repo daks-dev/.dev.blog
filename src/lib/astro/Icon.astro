@@ -1,0 +1,15 @@
+---
+import { Icon as Component } from '@daks.dev/astro.sdk/astro/icon';
+import type { IconsKeys } from '$app/icons';
+
+type Props = {
+  icon: IconsKeys;
+} & Record<string, unknown>;
+
+const { icon, ...props } = Astro.props;
+---
+
+<Component
+  {icon}
+  {...props}
+/>

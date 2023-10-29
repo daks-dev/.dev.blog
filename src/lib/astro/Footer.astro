@@ -1,0 +1,21 @@
+---
+import { GithubLink, WebtooLink } from '@daks.dev/astro.sdk/astro/social';
+import { Timer } from '@daks.dev/astro.sdk/astro/timer';
+
+const today = new Date();
+---
+
+<footer class='bg-gray-700/50 text-gray-500'>
+  <div class='wrapper flex h-16 items-center justify-between gap-x-16'>
+    <span class='text-sm sm:text-base'>
+      &copy; {today.getFullYear()} DAKS.DEV&nbsp;&trade;
+    </span>
+
+    <Timer class='font-mono text-sm text-slate-500' />
+
+    <div class='flex justify-center gap-x-4 sm:gap-x-8'>
+      <GithubLink />
+      <WebtooLink />
+    </div>
+  </div>
+</footer>

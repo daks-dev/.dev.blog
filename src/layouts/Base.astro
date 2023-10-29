@@ -1,0 +1,46 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import { Head } from '@daks.dev/astro.sdk/astro/head';
+import { YandexMetrika } from '@daks.dev/astro.sdk/astro/yandex';
+import { Header, Footer } from '$lib/astro';
+
+import '@/styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  schema?: string;
+}
+const { title, description, schema = 'WebPage' } = Astro.props;
+
+import { app, seo } from '$app/configs';
+const {
+  yandex: { counter }
+} = seo;
+---
+
+<!doctype html>
+<html
+  lang='ru'
+  class='dark'
+  transition:animate='none'>
+  <head>
+    <Head
+      {title}
+      {description}
+      {app}
+      rss='/rss.xml'
+    />
+    <ViewTransitions />
+  </head>
+
+  <body
+    class='prose-xl prose-slate dark:prose-invert'
+    itemscope
+    itemtype={`https://schema.org/${schema}`}>
+    <Header />
+    <slot />
+    <Footer />
+    <YandexMetrika {counter} />
+  </body>
+</html>

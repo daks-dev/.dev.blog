@@ -1,0 +1,23 @@
+---
+import { Navbar } from '@daks.dev/astro.sdk/astro/navbar';
+
+import { app, nav } from '$app/configs';
+const { name: label } = app;
+const {
+  navbar: { items }
+} = nav;
+---
+
+<Navbar
+  {items}
+  custom={{
+    home: 'h-9'
+  }}
+  brand={{
+    label,
+    icon: {
+      home: 'package',
+      page: 'code-block'
+    }
+  }}
+/>

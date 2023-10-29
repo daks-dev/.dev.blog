@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navbar-height: 72px;
+  }
+
+  body {
+    @apply -lg:snap-start relative flex min-h-screen
+           flex-col bg-neutral-200 bg-[url(/icons/astro.bg.svg)] bg-fixed bg-clip-content bg-center bg-no-repeat
+           text-gray-800 dark:bg-gray-800 dark:text-neutral-200;
+    /* transition-colors duration-300 ease-in-out */
+  }
+}
+
+@layer components {
+  main,
+  [role='main'] {
+    @apply mb-8 flex flex-col;
+    padding-top: calc(var(--navbar-height) + 2rem);
+  }
+
+  #navbar-menu a {
+    @apply page:text-gray-700 dark:page:text-gray-200 step:underline
+           -lg:px-4 -lg:py-2 -lg:dark:hover:bg-gray-500/95
+           -lg:hover:bg-neutral-400/95 text-slate-500 dark:text-slate-400 lg:hover:text-sky-500;
+  }
+}
+
+@layer utilities {
+  .min-h-screen--navbar {
+    min-height: calc(100vh - var(--navbar-height));
+  }
+  .max-h-screen--navbar {
+    max-height: calc(100vh - var(--navbar-height));
+  }
+
+  .snap-start,
+  .snap-center {
+    scroll-margin-top: var(--navbar-height);
+  }
+
+  .transition-easy {
+    @apply transition duration-300 ease-in-out;
+  }
+}
