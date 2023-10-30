@@ -50,7 +50,7 @@ export default {
         rel: 'prefetch',
         href: '/blog',
         label: 'Blog'
-      },
+      }
       /*
       {
         label: 'dropdown', // &equiv;',

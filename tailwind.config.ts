@@ -14,7 +14,7 @@ export default {
         waiting: 'url(@daks.dev/astro.sdk/icons/spinners/clock.svg)',
         loading: 'url(@daks.dev/astro.sdk/icons/spinners/90-ring-bg.svg)'
       }
-    },
+    }
   },
 
   plugins: [typography]

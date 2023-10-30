@@ -16,7 +16,7 @@
     "test:integration": "playwright test -c tests/",
     "test:unit": "vitest --ui",
     "test": "pnpm test:integration && pnpm test:unit",
-    "run:prettier": "prettier --plugin=prettier-plugin-astro --plugin=prettier-plugin-svelte",
+    "run:prettier": "prettier --plugin=prettier-plugin-astro --plugin=prettier-plugin-svelte --plugin=prettier-plugin-tailwindcss",
     "lint": "pnpm run:prettier --check . && eslint .",
     "format": "pnpm run:prettier --write .",
     "run:update": "pnpm up"
