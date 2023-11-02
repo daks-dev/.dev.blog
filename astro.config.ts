@@ -44,11 +44,11 @@ export default defineConfig({
     svelte({
       include: ['**/svelte/**']
     }),
+    mdx(),
     tailwind(),
     prefetch({
       // throttle: 3
     }),
-    mdx(),
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,

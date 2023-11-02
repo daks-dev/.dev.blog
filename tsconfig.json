@@ -21,7 +21,7 @@
     }
   },
   "include": [
-    "astro.config.mjs",
+    "*.ts",
     "src/**/*.js",
     "src/**/*.jsx",
     "src/**/*.ts",
