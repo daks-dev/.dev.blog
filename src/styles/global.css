@@ -8,9 +8,9 @@
   }
 
   body {
-    @apply -lg:snap-start relative flex min-h-screen
-           flex-col bg-neutral-200 bg-[url(/icons/astro.bg.svg)] bg-fixed bg-clip-content bg-center bg-no-repeat
-           text-gray-800 dark:bg-gray-800 dark:text-neutral-200;
+    @apply relative flex min-h-screen flex-col
+           bg-neutral-200 bg-[url(/icons/astro.bg.svg)] bg-fixed bg-clip-content bg-center bg-no-repeat text-gray-800
+           dark:bg-gray-800 dark:text-neutral-200 -lg:snap-start;
     /* transition-colors duration-300 ease-in-out */
   }
 }
@@ -23,9 +23,9 @@
   }
 
   #navbar-menu a {
-    @apply page:text-gray-700 dark:page:text-gray-200 step:underline
-           -lg:px-4 -lg:py-2 -lg:dark:hover:bg-gray-500/95
-           -lg:hover:bg-neutral-400/95 text-slate-500 dark:text-slate-400 lg:hover:text-sky-500;
+    @apply text-slate-500 step:underline page:text-gray-700
+           dark:text-slate-400 dark:page:text-gray-200 -lg:px-4
+           -lg:py-2 -lg:hover:bg-neutral-400/95 -lg:dark:hover:bg-gray-500/95 lg:hover:text-sky-500;
   }
 }
 
