@@ -1,9 +1,9 @@
 ---
 import { Icon as Component } from '@daks.dev/astro.sdk/astro/icon';
-import type { IconsKeys } from '$app/icons';
+import type { IconKeys } from '$app/icons';
 
 type Props = {
-  icon: IconsKeys;
+  icon: IconKeys;
 } & Record<string, unknown>;
 
 const { icon, ...props } = Astro.props;

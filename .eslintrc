@@ -107,7 +107,12 @@
       "error",
       { "args": "after-used", "argsIgnorePattern": "^_" }
     ],
-    // "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/no-custom-classname": [
+      "warn",
+      {
+        "whitelist": ["lazy"]
+      }
+    ],
     "tailwindcss/classnames-order": [
       "warn",
       {

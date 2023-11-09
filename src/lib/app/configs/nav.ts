@@ -1,8 +1,8 @@
 import type { NavItem as NI, NavSite as NS } from '@daks.dev/astro.sdk/astro/navigate';
-import type { IconsKeys } from '$app/icons';
+import type { IconKeys } from '$app/icons';
 
 export interface NavItem extends NI {
-  icon?: IconsKeys;
+  icon?: IconKeys;
   items?: NavItem[];
 }
 

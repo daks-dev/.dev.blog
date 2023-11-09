@@ -1,5 +1,5 @@
 ---
-import { fade } from 'astro:transitions';
+// import { fade } from 'astro:transitions';
 import twMerge from '$lib/tailwind';
 import Layout from './Base.astro';
 
@@ -9,6 +9,8 @@ interface Props {
   class?: ClassName;
 }
 const { title, description, class: clasName } = Astro.props;
+
+// transition:animate={fade({ duration: '0.3s' })}
 ---
 
 <Layout
@@ -16,8 +18,7 @@ const { title, description, class: clasName } = Astro.props;
   {description}>
   <main
     class={twMerge('content grow', clasName)}
-    itemprop='mainContentOfPage'
-    transition:animate={fade({ duration: '0.3s' })}>
+    itemprop='mainContentOfPage'>
     <slot />
   </main>
 </Layout>

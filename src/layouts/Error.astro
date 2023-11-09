@@ -1,5 +1,5 @@
 ---
-import { fade, ViewTransitions } from 'astro:transitions';
+import { /* fade, */ ViewTransitions } from 'astro:transitions';
 import { Header, Footer } from '$lib/astro';
 
 import pkg from 'package.json';
@@ -12,13 +12,14 @@ interface Props {
   message: string;
 }
 const { status = 'Unknown', message } = Astro.props;
+
+// transition:animate={fade({ duration: '0.3s' })}
 ---
 
 <!doctype html>
 <html
   lang='ru'
-  class='dark'
-  transition:animate='none'>
+  class='theme-dark'>
   <head>
     <meta charset='utf-8' />
     <meta
@@ -49,9 +50,7 @@ const { status = 'Unknown', message } = Astro.props;
 
   <body>
     <Header />
-    <main
-      class='content grow items-center'
-      transition:animate={fade({ duration: '0.3s' })}>
+    <main class='content grow items-center'>
       <slot />
     </main>
     <Footer />

@@ -10,7 +10,7 @@ import svelte from '@astrojs/svelte';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://daks.dev',
+  site: 'https://astro.daks.dev',
 
   trailingSlash: 'never',
 
@@ -33,6 +33,7 @@ export default defineConfig({
     optimizeDeps: {
       exclude: ['@daks.dev/astro.sdk']
     }
+    // server: { fs: { strict: false } }
     // plugins: []
     // define: { 'process.env': process.env }
   },
@@ -47,7 +48,7 @@ export default defineConfig({
     mdx(),
     tailwind(),
     prefetch({
-      // throttle: 3
+      throttle: 3
     }),
     sitemap({
       changefreq: 'weekly',
