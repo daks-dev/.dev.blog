@@ -1,6 +1,8 @@
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'astro/config';
 
+import 'dotenv/config';
+
 import compress from 'astro-compress';
 import mdx from '@astrojs/mdx';
 import prefetch from '@astrojs/prefetch';
@@ -32,10 +34,10 @@ export default defineConfig({
     },
     optimizeDeps: {
       exclude: ['@daks.dev/astro.sdk']
-    }
+    },
     // server: { fs: { strict: false } }
     // plugins: []
-    // define: { 'process.env': process.env }
+    define: { 'process.env': process.env }
   },
 
   integrations: [
