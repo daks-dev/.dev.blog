@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --navbar-height: 72px;
+    --navbar-height: 48px;
   }
 
   body {
@@ -19,7 +19,7 @@
   main,
   [role='main'] {
     @apply mb-8 flex flex-col;
-    padding-top: calc(var(--navbar-height) + 2rem);
+    padding-top: calc(var(--navbar-height) + 4rem);
   }
 
   #navbar-menu a {
@@ -43,6 +43,6 @@
   }
 
   .transition-easy {
-    @apply transition duration-300 ease-in-out;
+    @apply transition duration-300;
   }
 }

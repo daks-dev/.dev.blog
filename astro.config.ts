@@ -5,7 +5,6 @@ import 'dotenv/config';
 
 import compress from 'astro-compress';
 import mdx from '@astrojs/mdx';
-import prefetch from '@astrojs/prefetch';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import svelte from '@astrojs/svelte';
@@ -19,6 +18,10 @@ export default defineConfig({
   outDir: 'build',
 
   // redirects: { '/old': '/new', '/old/[...slug]': '/new/[...slug]' }
+
+  prefetch: {
+    defaultStrategy: 'viewport'
+  },
 
   vite: {
     logLevel: 'info',
@@ -49,9 +52,6 @@ export default defineConfig({
     }),
     mdx(),
     tailwind(),
-    prefetch({
-      throttle: 3
-    }),
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,

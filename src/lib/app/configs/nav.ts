@@ -15,54 +15,34 @@ interface NavSite extends NS {
 export default {
   navbar: {
     items: [
-      /*
       {
-        href: '/about',
-        label: 'dropdown', // &equiv;',
-        icon: 'globe',
-        items: [
-          {
-            href: '/about',
-            label: 'About'
-          },
-          {
-            href: '/astro',
-            label: 'Astro'
-          },
-          {
-            href: '/blog',
-            label: 'Blog'
-          }
-        ]
-      },
-      */
-      {
-        rel: 'prefetch',
+        prefetch: true,
         href: '/astro',
         label: 'Astro'
       },
       {
-        rel: 'prefetch',
+        prefetch: true,
         href: '/about',
         label: 'About'
       },
       {
-        rel: 'prefetch',
+        prefetch: true,
         href: '/blog',
         label: 'Blog'
-      }
-      /*
+      },
       {
-        label: 'dropdown', // &equiv;',
-        icon: 'trophy',
+        href: '/',
+        label: 'Dropdown',
+        icon: 'package',
+        size: '1.125em',
         items: [
-          {
-            href: '/about',
-            label: 'About'
-          },
           {
             href: '/astro',
             label: 'Astro'
+          },
+          {
+            href: '/about',
+            label: 'About'
           },
           {
             href: '/blog',
@@ -70,7 +50,6 @@ export default {
           }
         ]
       }
-      */
     ]
   }
 } satisfies NavSite;
