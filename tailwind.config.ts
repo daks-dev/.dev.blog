@@ -1,8 +1,6 @@
 import type { Config } from 'tailwindcss';
 import typography from '@tailwindcss/typography';
-import { common, fontSans, screens } from '@daks.dev/astro.sdk/tailwind';
-
-export const breakpoint = 736;
+import { common, fontSans } from '@daks.dev/astro.sdk/tailwind';
 
 export default {
   content: ['./src/**/*.{html,js,jsx,ts,tsx,md,mdx,astro,svelte}', ...common.content],
@@ -10,7 +8,6 @@ export default {
   presets: [common],
 
   theme: {
-    screens: screens(breakpoint),
     extend: {
       fontFamily: fontSans(),
       backgroundImage: {
