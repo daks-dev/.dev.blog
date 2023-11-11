@@ -36,7 +36,11 @@ aspectRatio={1200 / 500}
         rel='prefetch-intent'>
         {post.data.heroImage ? (
           <Picture
-            class='mb-4 h-auto w-full max-w-full rounded-xl'
+            class:list={[
+              'mb-4 h-auto w-full max-w-full',
+              'from-slate-300 to-slate-800 bg-linear-150 dark:bg-linear-330',
+              'rounded-xl'
+            ]}
             src={post.data.heroImage}
             formats={['avif', 'webp']}
             widths={[480, 960]}
